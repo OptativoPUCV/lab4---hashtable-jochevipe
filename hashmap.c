@@ -41,6 +41,27 @@ int is_equal(void* key1, void* key2){
 
 void insertMap(HashMap * map, char * key, void * value) {
 
+  long indice = hash(key,map->capacity);
+  long i = 0;
+  
+
+  if(map->buckets[indice]->key == NULL){
+    map->buckets[indice]->key = key;
+    map->buckets[indice]->value = value;
+    
+  }else{
+
+    for(long i=indice-1 ; i<map->capacity ; i++){
+
+      if(map->buckets[i]->key == NULL){
+
+        map->buckets[i]->key = key;
+        map->buckets[i]->value = value;
+      }
+    }
+    
+  }
+    
 
 }
 
@@ -59,14 +80,11 @@ HashMap * createMap(long capacity) {
   mapa->buckets = (Pair**)malloc(sizeof(Pair*) * capacity);
   if(mapa->buckets == NULL) exit(EXIT_FAILURE);
 
-
-  
   for(long i=0 ; i<capacity ; i++){
 
-  mapa->buckets[i] = NULL;
+    mapa->buckets[i] = NULL;
   }
   
-
   mapa->size = 0;
   mapa->current = -1;
   mapa->capacity = capacity;
