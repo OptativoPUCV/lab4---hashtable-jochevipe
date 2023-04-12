@@ -70,7 +70,7 @@ HashMap * createMap(long capacity) {
 
   mapa->size = 0;
   mapa->current = -1;
-  
+  mapa->capacity = capacity;
   return mapa;
 }
 

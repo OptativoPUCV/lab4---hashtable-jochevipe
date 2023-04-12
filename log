@@ -20,3 +20,14 @@ hashmap.c:64:18: error: ‘*_1 + _3’ may be used uninitialized [-Werror=maybe-
 cc1: all warnings being treated as errors
 Compilation failed
 2d7c4e2
+Wed 12 Apr 2023 07:42:05 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:64:18: error: ‘*_1 + _3’ may be used uninitialized [-Werror=maybe-uninitialized]
+   64 |     mapa->buckets[i]->value = (void*)malloc(sizeof(void));
+      |     ~~~~~~~~~~~~~^~~
+cc1: all warnings being treated as errors
+Compilation failed
+1aa8fd9
