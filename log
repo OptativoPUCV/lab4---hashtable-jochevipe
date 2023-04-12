@@ -53,3 +53,14 @@ hashmap.c:62:16: error: ‘*(Pair **)malloc (8)’ may be used uninitialized [-W
 cc1: all warnings being treated as errors
 Compilation failed
 ab6e216
+Wed 12 Apr 2023 07:50:36 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:62:16: error: ‘*(Pair **)malloc (8)’ may be used uninitialized [-Werror=maybe-uninitialized]
+   62 |   mapa->buckets[0]->value = (void*)malloc(sizeof(void*));
+      |   ~~~~~~~~~~~~~^~~
+cc1: all warnings being treated as errors
+Compilation failed
+8a94368

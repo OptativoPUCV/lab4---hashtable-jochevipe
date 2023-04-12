@@ -59,7 +59,7 @@ HashMap * createMap(long capacity) {
   mapa->buckets = (Pair**)malloc(sizeof(Pair*));
   if(mapa->buckets == NULL) exit(EXIT_FAILURE);
 
-  mapa->buckets[0]->value = (void*)malloc(sizeof(void));
+  mapa->buckets[0]->value = (void*)malloc(sizeof(void*));
   if(mapa->buckets[0]->value == NULL) exit(EXIT_FAILURE);
   
    mapa->buckets[0]->key = (char*)malloc(sizeof(char));
