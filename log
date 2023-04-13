@@ -236,3 +236,16 @@ Thu 13 Apr 2023 03:43:19 PM UTC:
  tests:  11|2
 total_score: 50/70
 ba624e9
+Thu 13 Apr 2023 03:46:39 PM UTC: 
+ hashmap.c | 15 ++++++++++++---
+ 1 file changed, 12 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:177:23: error: expected ‘;’ before ‘return’
+  177 |       map->current = j
+      |                       ^
+      |                       ;
+  178 |       return map->buckets[j];
+      |       ~~~~~~           
+Compilation failed
+8ac4dc5
