@@ -165,3 +165,19 @@ Thu 13 Apr 2023 03:20:06 PM UTC:
  1 file changed, 2 insertions(+), 1 deletion(-)
  tests:  0|0
 30a5d34
+Thu 13 Apr 2023 03:20:22 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:110:26: error: ‘j’ undeclared (first use in this function); did you mean ‘jn’?
+  110 |   if(strcmp(map->buckets[j]->key,key) == 0){
+      |                          ^
+      |                          jn
+hashmap.c:110:26: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:131:1: error: control reaches end of non-void function [-Werror=return-type]
+  131 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+b96f2bd
