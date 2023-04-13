@@ -174,7 +174,7 @@ Pair * nextMap(HashMap * map) {
 
     long j = i % map->capacity;
     if(map->buckets[j] != NULL){
-      map->current = j
+      map->current = j;
       return map->buckets[j];
     }
   }
