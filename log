@@ -92,3 +92,14 @@ hashmap.c:45:8: error: unused variable ‘i’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 bb2ba0e
+Thu 13 Apr 2023 03:19:23 AM UTC: 
+ hashmap.c | 13 +++++++++----
+ 1 file changed, 9 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:45:8: error: unused variable ‘i’ [-Werror=unused-variable]
+   45 |   long i = 0;
+      |        ^
+cc1: all warnings being treated as errors
+Compilation failed
+7e79a0b
