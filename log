@@ -287,3 +287,18 @@ Thu 13 Apr 2023 03:49:43 PM UTC:
  tests:  12|2
 total_score: 50/70
 18c4bdd
+Thu 13 Apr 2023 03:51:17 PM UTC: 
+ hashmap.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:166:21: error: ‘jj’ undeclared (first use in this function); did you mean ‘j’?
+  166 |     if(map->buckets[jj != NULL || map->buckets[j]->key != NULL){
+      |                     ^~
+      |                     j
+hashmap.c:166:21: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:166:63: error: expected ‘]’ before ‘)’ token
+  166 |     if(map->buckets[jj != NULL || map->buckets[j]->key != NULL){
+      |                                                               ^
+Compilation failed
+dd9468a
