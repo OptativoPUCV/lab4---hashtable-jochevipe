@@ -75,10 +75,10 @@ void enlarge(HashMap * map) {
   map->capacity *= 2; 
   map->size = 0;
   
-  map->buckets = (Pair **) calloc(map->capacity, sizeof(Pair *));
+  map->buckets = (Pair**)realloc(map->buckets, sizeof(Pair*) * map->capacity);
   
 
-  for(long i = 0; i < map->capacity ; i++){
+  for(long i = 0; i < map->capacity /2 ; i++){
 
    if(aux[i] != NULL)insertMap(map, aux[i]->key, aux[i]->value);
     map->size++;
