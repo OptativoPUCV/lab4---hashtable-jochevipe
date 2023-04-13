@@ -107,17 +107,26 @@ Pair * searchMap(HashMap * map,  char * key) {
     return NULL;
   }
 
-  for(long i=indice ; i < map->capacity + indice ; i++){
-    long j = i % map->capacity;
+  if(map->buckets[indice]->key == key){
+
+    return map->buckets[indice];
+
+  }else{
+
+    for(long i=indice ; i < map->capacity + indice ; i++){
+      
+      long j = i % map->capacity;
     
-    if(map->buckets[j]->key == key){
-      map->current = indice;
-      return map->buckets[j];
+      if(map->buckets[j]->key == key){
+        map->current = indice;
+        return map->buckets[j];
+      }
+    
     }
+    return NULL;
     
-    if(map->buckets[j] == NULL) return NULL;
   }
-  return map->buckets[indice];
+  
 }
 
 Pair * firstMap(HashMap * map) {
