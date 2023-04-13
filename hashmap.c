@@ -105,23 +105,19 @@ Pair * searchMap(HashMap * map,  char * key) {
 
   if(map->buckets[indice] == NULL){
     return NULL;
-    
-  }else{
-
-    for(long i=indice ; i < map->capacity + indice ; i++){
-
-      long j = i % map->capacity;
-      if(map->buckets[j] == NULL) return NULL;
-
-      if(map->buckets[j]->key == key){
-
-        map->current = indice;
-        return map->buckets[j];
-      }
-    }
-    
   }
 
+  for(long i=indice ; i < map->capacity + indice ; i++){
+    long j = i % map->capacity;
+    
+    if(map->buckets[j]->key == key){
+      map->current = indice;
+      return map->buckets[j];
+    }
+    
+    if(map->buckets[j] == NULL) return NULL;
+  }
+  return NULL;
 }
 
 Pair * firstMap(HashMap * map) {
