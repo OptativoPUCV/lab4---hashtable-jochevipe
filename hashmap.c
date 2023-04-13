@@ -80,8 +80,8 @@ void enlarge(HashMap * map) {
 
   for(long i = 0; i < map->capacity /2 ; i++){
 
-   if(aux[i] != NULL)insertMap(map, aux[i]->key, aux[i]->value);
-    map->size++;
+   if(aux[i] != NULL) insertMap(map, aux[i]->key, aux[i]->value);
+    
   }
   free(aux);
 }
