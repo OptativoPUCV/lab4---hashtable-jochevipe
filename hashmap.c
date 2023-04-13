@@ -53,10 +53,10 @@ void insertMap(HashMap * map, char * key, void * value) {
     for(long i=indice ; i < map->capacity + indice ; i++){
 
       long j = i % map->capacity;
-      if(map->buckets[i]->key == NULL){
+      if(map->buckets[j]->key == NULL){
 
-        map->buckets[i]->key = key;
-        map->buckets[i]->value = value;
+        map->buckets[j]->key = key;
+        map->buckets[j]->value = value;
         map->current = j;
         
         break;
