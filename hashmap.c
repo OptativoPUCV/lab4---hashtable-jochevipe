@@ -117,7 +117,8 @@ Pair * searchMap(HashMap * map,  char * key) {
     for(long i=indice ; i < map->capacity + indice ; i++){
       
       long j = i % map->capacity;
-    
+      if(map->buckets[j]->key == NULL) return NULL;
+      
       if(strcmp(map->buckets[j]->key,key) == 0){
         map->current = j;
         return map->buckets[j];
