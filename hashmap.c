@@ -109,6 +109,7 @@ Pair * searchMap(HashMap * map,  char * key) {
 
   if(map->buckets[indice]->key == key){
 
+    map->current = indice;
     return map->buckets[indice];
 
   }else{
@@ -117,7 +118,7 @@ Pair * searchMap(HashMap * map,  char * key) {
       
       long j = i % map->capacity;
     
-      if(map->buckets[j]->key == key){
+      if(strcmp(map->buckets[j]->key,key) == 0){
         map->current = indice;
         return map->buckets[j];
       }
