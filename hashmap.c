@@ -114,7 +114,7 @@ Pair * searchMap(HashMap * map,  char * key) {
 
   }else{
 
-    for(long i=indice ; i < map->capacity + indice ; i++){
+    for(long i=indice-1 ; i < map->capacity + indice ; i++){
       
       long j = i % map->capacity;
     
@@ -125,7 +125,6 @@ Pair * searchMap(HashMap * map,  char * key) {
     
     }
     return NULL;
-    
   }
   
 }
