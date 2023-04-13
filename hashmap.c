@@ -82,7 +82,7 @@ void enlarge(HashMap * map) {
   for(long i = 0; i < map->capacity ; i++){
 
     insertMap(map, aux[i]->key, aux[i]->value);
-    
+    map->size++;
   }
 }
 
